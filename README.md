@@ -67,7 +67,7 @@ The build lightly rounds corners on shared edges between world-overview risk col
 
 ## Publication status
 
-The source code is being prepared for public GitHub publication. Website deployment is pending the choice of redistributable data. No recurring source-update job is scheduled. The MIT licence covers authored software and documentation, not third-party data. France Diplomatie's world image and Colombia image visibly carry CC BY-NC-ND badges, while the general website offers Licence Ouverte 2.0. Permission for traced, simplified and recoloured geometry remains unresolved. See [DATA-LICENSES.md](DATA-LICENSES.md). Candidate geometry stays under `private/`, which Git ignores. Do not upload the entire local folder or force-add private assets.
+The source code is public on [GitHub](https://github.com/Skyba/world-risk-map). Website deployment is pending the choice of redistributable data. No recurring source-update job is scheduled. The MIT licence covers authored software and documentation, not third-party data. France Diplomatie's world image and Colombia image visibly carry CC BY-NC-ND badges, while the general website offers Licence Ouverte 2.0. Permission for traced, simplified and recoloured geometry remains unresolved. See [DATA-LICENSES.md](DATA-LICENSES.md). Candidate geometry stays under `private/`, which Git ignores. Do not upload the entire local folder or force-add private assets.
 
 The public builder refuses uncleared or unreviewed geometry:
 
