@@ -1,0 +1,6 @@
+-r requirements.txt
+Pillow==12.3.0
+scipy==1.18.1
+pyproj==3.8.0
+opencv-python-headless==5.0.0.93
+rasterio==1.5.2

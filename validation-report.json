@@ -1,0 +1,157 @@
+{
+  "polygon_features_validated": 1048,
+  "country_records": 263,
+  "source_coverage": {
+    "france_diplomatie": 202,
+    "uk_fallback": 34,
+    "without_dedicated_advice": [
+      {
+        "iso3": "ESB",
+        "name": "Dhekelia Cantonment"
+      },
+      {
+        "iso3": "USG",
+        "name": "Guantanamo Bay Naval Base"
+      },
+      {
+        "iso3": "VAT",
+        "name": "Vatican City"
+      },
+      {
+        "iso3": "CNM",
+        "name": "United Nations Buffer Zone in Cyprus"
+      },
+      {
+        "iso3": "KAS",
+        "name": "Siachen Glacier"
+      },
+      {
+        "iso3": "WSB",
+        "name": "Akrotiri Sovereign Base Area"
+      },
+      {
+        "iso3": "SPI",
+        "name": "Southern Patagonian Ice Field"
+      },
+      {
+        "iso3": "BRT",
+        "name": "Bir Tawil"
+      },
+      {
+        "iso3": "ATF",
+        "name": "French Southern and Antarctic Lands"
+      },
+      {
+        "iso3": "UMI",
+        "name": "United States Minor Outlying Islands"
+      },
+      {
+        "iso3": "VIR",
+        "name": "United States Virgin Islands"
+      },
+      {
+        "iso3": "PRI",
+        "name": "Puerto Rico"
+      },
+      {
+        "iso3": "HMD",
+        "name": "Heard Island and McDonald Islands"
+      },
+      {
+        "iso3": "JEY",
+        "name": "Jersey"
+      },
+      {
+        "iso3": "GGY",
+        "name": "Guernsey"
+      },
+      {
+        "iso3": "IMN",
+        "name": "Isle of Man"
+      },
+      {
+        "iso3": "ALD",
+        "name": "\u00c5land"
+      },
+      {
+        "iso3": "FRO",
+        "name": "Faroe Islands"
+      },
+      {
+        "iso3": "NFK",
+        "name": "Norfolk Island"
+      },
+      {
+        "iso3": "ASM",
+        "name": "American Samoa"
+      },
+      {
+        "iso3": "GUM",
+        "name": "Guam"
+      },
+      {
+        "iso3": "MNP",
+        "name": "Northern Mariana Islands"
+      },
+      {
+        "iso3": "PGA",
+        "name": "Wake Island"
+      },
+      {
+        "iso3": "CLP",
+        "name": "Clipperton Island"
+      },
+      {
+        "iso3": "BJN",
+        "name": "Bajo Nuevo Bank"
+      },
+      {
+        "iso3": "SER",
+        "name": "Serranilla Bank"
+      },
+      {
+        "iso3": "SCR",
+        "name": "Scarborough Shoal"
+      }
+    ]
+  },
+  "geometry_coverage": {
+    "countries_with_zones": 194,
+    "countries_with_majority_coverage": 180,
+    "detailed_countries": 6,
+    "city_count": 7342
+  },
+  "publication_blockers": 194,
+  "snapshot": "2026-10-07",
+  "unit_tests_passed": 13,
+  "browser_checks": [
+    "world rendering",
+    "country search",
+    "official advice and source dates",
+    "Egypt solid dark plum restrictions",
+    "square capitals and zoom-dependent labels",
+    "France UK fallback attribution",
+    "Pasto city exception and access note",
+    "copy view link",
+    "restore selected city from URL",
+    "complete single-world framing without repeated continents",
+    "Cameroon\u2013Chad shared zone corners visibly rounded",
+    "thin country borders visible above advisory fills",
+    "selected zone retains advice while highlighting only the country boundary"
+  ],
+  "browser_console_errors": 0,
+  "javascript_syntax": "passed",
+  "python_sources_compile": "passed",
+  "public_build": "correctly refused while data is unreviewed and uncleared",
+  "published": false,
+  "browser_renderer": "MapLibre GL JS 5.12.0",
+  "display_smoothing": {
+    "overview_features_checked": 424,
+    "country_records_smoothed": 123,
+    "shared_arcs_rounded": 1428,
+    "source_snapshots_unchanged": true,
+    "coverage_unchanged": true,
+    "new_overlaps": 0,
+    "polygon_components_and_holes_preserved": true
+  }
+}

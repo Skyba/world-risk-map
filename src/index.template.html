@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World Risk Map — private preview</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui;color:#18232e;background:#f4f6f7}header{padding:18px 24px 10px}h1{font-size:23px;letter-spacing:-.6px;margin:0 0 4px}p{margin:5px 0}nav{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:14px}button,select{font:inherit;padding:7px 10px;border:1px solid #bbc4ca;background:white;border-radius:6px;color:inherit;cursor:pointer}button.active{background:#18232e;color:white}main{display:grid;grid-template-columns:minmax(0,1fr) 300px;padding:0 24px 24px;gap:16px}.map-wrap{border:1px solid #c7d0d5;border-radius:9px;overflow:hidden;background:white}#map{height:650px;min-height:420px}#render-status{padding:7px 12px;font-size:12px;color:#586570;border-top:1px solid #dbe1e5}aside{background:white;padding:18px;border-radius:9px;border:1px solid #e0e5e8}h2{font-size:20px;margin:0 0 8px}a{color:#145faa}.muted{color:#586570;font-size:12px}.legend{display:flex;gap:8px 17px;flex-wrap:wrap;padding:10px 0 3px;font-size:12px}.swatch{display:inline-block;width:11px;height:11px;margin-right:5px;vertical-align:middle}.dot{border-radius:50%;background:#233745;border:1px solid white;box-shadow:0 0 0 1px #233745;width:7px;height:7px}.capital{background:#243c49;border:1px solid white;box-shadow:0 0 0 1px #243c49;width:8px;height:8px}.restricted{background:#49364f}.exception{border-radius:50%;background:#fff7b2;border:2px solid #253b49}#detail{margin:8px 0 12px}#city-select{width:100%;margin:5px 0 12px}#city-card{padding:12px;margin-bottom:14px;border:1px solid #b6c7d6;border-left:3px solid #2557b5;border-radius:5px}#city-card strong{display:block;font-size:17px}details{margin-top:13px;padding-top:10px;border-top:1px solid #e4e9eb}summary{cursor:pointer}#original{width:100%;margin-top:10px}#limitations{padding-left:17px}#comparison{width:100%;height:auto}.hint{margin-top:14px}#map[hidden],#comparison[hidden]{display:none}@media(max-width:780px){main{grid-template-columns:1fr;padding:0 12px 12px}header{padding:16px 12px}#map{height:520px}nav label{width:100%}}
+</style></head><body>
+<header><h1>World Risk Map</h1><p class="muted">Private sample · independent visualisation of French travel advice</p><p id="freshness" class="muted"></p>
+<nav aria-label="Map view"><button data-country="gabon">Gabon</button><button data-country="senegal">Senegal</button><button data-country="tunisie">Tunisia</button><button data-country="colombie">Colombia</button><button data-country="indonesie">Indonesia</button><button data-country="egypte">Egypt</button><button data-country="russie">Russia</button><button id="world">World overview</button><label>View <select id="mode"><option value="vector">Smooth zones + cities</option><option value="raster">Aligned source image</option><option value="compare">Source / extraction comparison</option></select></label></nav>
+<div class="legend"><span><i class="swatch" style="background:#c2d764"></i>Normal vigilance</span><span><i class="swatch" style="background:#fff7b2"></i>Heightened caution</span><span><i class="swatch" style="background:#f5a04d"></i>Essential travel only</span><span><i class="swatch" style="background:#e0181b"></i>Strongly discouraged</span><span><i class="swatch" style="background:#d9dfe2"></i>No candidate coverage</span><span><i class="swatch restricted"></i>Closed to civilians</span><span><i class="swatch capital"></i>Capital</span><span><i class="swatch dot"></i>City</span><span><i class="swatch exception"></i>City exception</span></div></header>
+<main><div class="map-wrap"><div id="map" aria-label="Interactive advisory map"></div><img id="comparison" alt="Official source on the left, original colour extraction on the right" hidden><div id="render-status" role="status">Loading map…</div></div><aside><h2 id="country">Colombia</h2><div id="detail"></div><label for="city-select">Find a city</label><select id="city-select"><option value="">Choose a city…</option></select><div id="city-card" hidden></div><p><a id="source" target="_blank" rel="noopener">French government advice ↗</a></p><p class="muted" id="dates"></p><p class="muted hint">Click an area or a city. More places appear as you zoom in. Coloured city dots are symbols, with no implied geographic radius.</p><details><summary>About this sample</summary><p class="muted">Approximate, unapproved geometry. Grey gaps remain where alignment or coverage is unresolved. Smoother edges do not improve the accuracy of the source alignment.</p><p class="muted" id="status"></p><ul id="limitations" class="muted"></ul></details><details><summary>Display measurements</summary><div id="measurements" class="muted"></div></details><details id="source-panel"><summary>Official source map</summary><a id="source-image" target="_blank" rel="noopener"><img id="original" alt="Full official source map including its legend" loading="lazy"></a></details></aside></main>
+<script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+<script>
+const zones=__ZONES__,detailZones=__DETAIL_ZONES__,land=__LAND__,cities=__CITIES__,overlays=__OVERLAYS__,metrics=__METRICS__,displayMetrics=__DISPLAY_METRICS__;
+const names={gabon:'Gabon',senegal:'Senegal',tunisie:'Tunisia',colombie:'Colombia',indonesie:'Indonesia',egypte:'Egypt',russie:'Russia'},levels={green:'Normal vigilance',yellow:'Heightened caution',orange:'Travel discouraged unless essential',red:'Travel strongly discouraged'};
+const colors=['match',['get','risk'],'green','#c2d764','yellow','#fff7b2','orange','#f5a04d','red','#e0181b','#888'];
+const cityById=new Map(cities.features.map(f=>[f.properties.id,f]));
+const $=id=>document.getElementById(id);
+const snapshotDate=__SNAPSHOT_DATE__;
+const snapshotAge=Math.max(0,Math.floor((Date.now()-Date.parse(snapshotDate+'T00:00:00Z'))/86400000));
+$('freshness').textContent=`Snapshot ${snapshotDate} · ${snapshotAge} day${snapshotAge===1?'':'s'} old${snapshotAge>35?' · Update overdue':''} · Check current official advice before travel`;
+let selected='colombie',cityThreshold=-1;
+const map=new maplibregl.Map({container:'map',center:[-74,4],zoom:4,maxZoom:11,style:{version:8,glyphs:'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',sources:{},layers:[{id:'ocean',type:'background',paint:{'background-color':'#eaf1f5'}}]},attributionControl:false});
+map.addControl(new maplibregl.NavigationControl({showCompass:false}));
+map.addControl(new maplibregl.AttributionControl({customAttribution:'Advisories: France Diplomatie · Places & boundaries: Natural Earth · Experimental'}));
+function fitCountry(country){const bounds=new maplibregl.LngLatBounds();overlays[country].coordinates.forEach(c=>bounds.extend(c));map.fitBounds(bounds,{padding:30,duration:0});}
+function highlightZone(id){for(const lod of ['overview','detail'])map.setFilter('zone-selected-'+lod,['==',['get','zone_id'],id||'none']);}
+function choose(country,risk=null,fly=true,zoneId=null,restrictionName=null){
+ selected=country;
+ document.querySelectorAll('[data-country]').forEach(b=>b.classList.toggle('active',b.dataset.country===country));
+ const fs=zones.features.filter(f=>f.properties.country===country),m=metrics[country],d=displayMetrics.countries[country];
+ $('country').textContent=names[country];
+ $('detail').textContent=m.source_only?'Source only · geographic conversion withheld':risk?levels[risk]+(restrictionName?' · Closed to civilians — '+restrictionName:' · selected area'):[...new Set(fs.map(f=>levels[f.properties.risk]))].join(' · ');
+ $('source').hidden=false;$('source').href=m.source_url;
+ $('status').textContent=`Alignment check: ${m.affine_leave_one_city_out_rmse_km} km RMS error across ${m.control_point_count} manually matched cities. This is not a boundary-accuracy measurement.`;
+ const limitations=[...m.limitations];
+ if(country==='egypte')limitations.splice(0,limitations.length,'Solid dark plum marks two approximate areas closed to civilians, traced from the official map.','The Siwa road corridor and disputed southeastern boundary still require geographic review.');
+ if(country==='colombie')limitations[1]='Nine isolated city exceptions are represented as points. Two still use approximate map-derived positions. Connected yellow areas and the island inset need further review.';
+ $('limitations').replaceChildren(...(limitations.length?limitations:['Narrow boundaries still need independent review.']).map(text=>{const li=document.createElement('li');li.textContent=text;return li}));
+ $('dates').textContent=`Map: ${m.map_date||'see source'} · source checked ${m.retrieved_at||'not recorded'}`;
+ $('measurements').textContent=d?`Boundary vertices: ${d.raw_vertices.toLocaleString()} original; ${d.levels.overview.vertices.toLocaleString()} overview; ${d.levels.detail.vertices.toLocaleString()} detail. Detail switches at zoom 6. No inter-risk area overlap detected. ${d.repaired_print_gap_pixels.toLocaleString()} pixels of enclosed printing gaps repaired. Source data retained separately.`:'No geographic geometry displayed for this source.';
+ $('source-image').href=m.source_image_url||m.source_url;
+ $('source-panel').hidden=false;if($('source-panel').open)$('original').src=overlays[country].original_url;else $('original').removeAttribute('src');
+ $('city-card').hidden=true;map.setFilter('city-selected',['==',['get','id'],'none']);
+ const countryCities=cities.features.filter(f=>f.properties.country===country).sort((a,b)=>a.properties.name.localeCompare(b.properties.name));
+ $('city-select').replaceChildren(new Option('Choose a city…',''),...countryCities.map(f=>new Option(f.properties.name+(f.properties.kind==='city_exception'?' · city exception':''),f.properties.id)));
+ $('city-select').disabled=m.source_only;
+ const selector=$('mode');selector.options[0].disabled=m.source_only;selector.options[1].disabled=m.source_only;if(m.source_only)selector.value='compare';
+ map.setFilter('country-selected',['==',['get','iso3'],fs.length?fs[0].properties.iso3:'none']);highlightZone(zoneId);
+ mode();if(fly&&!m.source_only&&!$('map').hidden)fitCountry(country);
+}
+function selectCity(feature,fly=false){
+ const p=feature.properties;
+ if(p.country){choose(p.country,null,false);$('city-select').value=p.id;$('mode').value='vector';mode();}
+ else {$('country').textContent=p.country_name;$('source').hidden=true;$('source-panel').hidden=true;$('detail').textContent='Outside this advisory sample';}
+ const title=document.createElement('strong');title.textContent=p.name;
+ const text=document.createElement('p');text.textContent=p.kind==='city_exception'?`${levels[p.risk]} · city exception shown in the source. ${p.condition}`:p.capital?'Capital city. The square is a location marker and does not carry a separate advisory rating.':'City location marker. Its dot does not carry a separate advisory rating.';
+ const note=document.createElement('p');note.className='muted';note.textContent=p.kind==='city_exception'?`${p.position_source}. Point symbol only: the city extent and access routes are not mapped.`:'Place names and positions: Natural Earth.';
+ $('city-card').replaceChildren(title,text,note);$('city-card').hidden=false;map.setFilter('city-selected',['==',['get','id'],p.id]);
+ if(fly)map.easeTo({center:feature.geometry.coordinates,zoom:7,duration:0});
+}
+function mode(){
+ const value=$('mode').value,raster=value==='raster',compare=value==='compare',wasHidden=$('map').hidden;
+ $('map').hidden=compare;$('comparison').hidden=!compare;
+ if(compare){$('comparison').src=overlays[selected].comparison_url;$('render-status').textContent='Original image / extraction comparison · display smoothing is not applied here';}
+ if(!compare){map.resize();if(wasHidden&&!metrics[selected].source_only)fitCountry(selected);}
+ for(const lod of ['overview','detail']){map.setLayoutProperty('zones-'+lod,'visibility',raster?'none':'visible');map.setLayoutProperty('restrictions-'+lod,'visibility',raster?'none':'visible');map.setLayoutProperty('zone-selected-'+lod,'visibility',raster?'none':'visible');}
+ if(raster&&!map.getSource('image-'+selected)){const o=overlays[selected];map.addSource('image-'+selected,{type:'image',url:o.url,coordinates:o.coordinates});map.addLayer({id:'image-'+selected,source:'image-'+selected,type:'raster',paint:{'raster-opacity':.92}},'zones-overview');}
+ for(const c of Object.keys(overlays))if(map.getLayer('image-'+c))map.setLayoutProperty('image-'+c,'visibility',raster&&c===selected?'visible':'none');
+ for(const id of ['city-dots','city-capitals','city-exceptions','city-labels','city-selected'])map.setLayoutProperty(id,'visibility',raster?'none':'visible');
+}
+function cityDetail(){
+ const threshold=Math.floor(map.getZoom());if(threshold===cityThreshold)return;cityThreshold=threshold;
+ map.setFilter('city-dots',['all',['==',['get','kind'],'city'],['!=',['get','capital'],true],['<=',['get','min_zoom'],threshold]]);
+ map.setFilter('city-capitals',['all',['==',['get','capital'],true],['<=',['get','min_zoom'],threshold]]);
+ map.setFilter('city-labels',['<=',['get','min_zoom'],threshold]);
+}
+map.on('load',()=>{
+ const square=new Uint8Array(24*24*4);
+ for(let y=0;y<24;y++)for(let x=0;x<24;x++){const i=(y*24+x)*4,inner=x>=3&&x<21&&y>=3&&y<21;square.set(inner?[36,60,73,255]:[255,255,255,255],i);}
+ map.addImage('capital-square',{width:24,height:24,data:square},{pixelRatio:2});
+ map.addSource('land',{type:'geojson',data:land,tolerance:.5});map.addLayer({id:'land',source:'land',type:'fill',paint:{'fill-color':'#d9dfe2','fill-outline-color':'#b1bdc5'}});
+ for(const [lod,data] of [['overview',zones],['detail',detailZones]]){
+  const range=lod==='overview'?{maxzoom:6}:{minzoom:6};
+  map.addSource('zones-'+lod,{type:'geojson',data,tolerance:.6});
+  map.addLayer({id:'zones-'+lod,source:'zones-'+lod,type:'fill',...range,paint:{'fill-color':colors,'fill-opacity':.9}});
+  map.addLayer({id:'restrictions-'+lod,source:'zones-'+lod,type:'fill',...range,filter:['==',['get','restriction'],'closed_to_civilians'],paint:{'fill-color':'#49364f','fill-opacity':1}});
+  map.addLayer({id:'zone-selected-'+lod,source:'zones-'+lod,type:'line',...range,filter:['==',['get','zone_id'],'none'],layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#2557b5','line-width':2}});
+ }
+ map.addLayer({id:'country-selected',source:'land',type:'line',filter:['==',['get','iso3'],'COL'],paint:{'line-color':'#496070','line-width':1,'line-opacity':.65}});
+ map.addSource('cities',{type:'geojson',data:cities});
+ map.addLayer({id:'city-dots',source:'cities',type:'circle',paint:{'circle-radius':['interpolate',['linear'],['zoom'],2,1.6,7,3,11,4],'circle-color':'#243c49','circle-stroke-color':'#fff','circle-stroke-width':1}});
+ map.addLayer({id:'city-capitals',source:'cities',type:'symbol',layout:{'icon-image':'capital-square','icon-size':['interpolate',['linear'],['zoom'],2,.55,7,.8,11,1],'icon-allow-overlap':true,'icon-ignore-placement':true}});
+ map.addLayer({id:'city-exceptions',source:'cities',type:'circle',minzoom:4,filter:['==',['get','kind'],'city_exception'],paint:{'circle-radius':['interpolate',['linear'],['zoom'],4,4,7,6,11,8],'circle-color':colors,'circle-stroke-color':'#243c49','circle-stroke-width':1.7}});
+ map.addLayer({id:'city-selected',source:'cities',type:'circle',filter:['==',['get','id'],'none'],paint:{'circle-radius':12,'circle-color':'#2557b5','circle-opacity':.12,'circle-stroke-color':'#2557b5','circle-stroke-width':2}});
+ map.addLayer({id:'city-labels',source:'cities',type:'symbol',layout:{'text-field':['get','name'],'text-font':['Noto Sans Regular'],'text-size':['interpolate',['linear'],['zoom'],2,11,7,13,11,15],'text-variable-anchor':['left','right','top','bottom'],'text-radial-offset':.65,'text-justify':'auto','text-padding':5,'symbol-sort-key':['get','priority'],'text-allow-overlap':false},paint:{'text-color':'#182e3b','text-halo-color':'#fff','text-halo-width':1.5}});
+ map.on('zoomend',cityDetail);cityDetail();
+ const clickable=['city-labels','city-exceptions','city-capitals','city-dots','restrictions-detail','restrictions-overview','zones-detail','zones-overview'];
+ map.on('click',e=>{const f=map.queryRenderedFeatures(e.point,{layers:clickable})[0];if(!f)return;const p=f.properties;if(p.kind){selectCity(cityById.get(p.id));}else choose(p.country,p.risk,false,p.zone_id,p.restriction_name);});
+ map.on('mousemove',e=>{map.getCanvas().style.cursor=map.queryRenderedFeatures(e.point,{layers:clickable}).length?'pointer':'';});
+ map.on('idle',()=>{if($('map').hidden)return;const count=new Set(map.queryRenderedFeatures({layers:['city-labels']}).map(f=>f.properties.id)).size;$('render-status').textContent=$('mode').value==='raster'?'Aligned source image · approximate geographic placement':`${map.getZoom()<6?'Overview':'Detail'} geometry · zoom ${map.getZoom().toFixed(1)} · ${count} city labels`;});
+ document.querySelectorAll('[data-country]').forEach(b=>b.onclick=()=>choose(b.dataset.country));$('mode').onchange=mode;
+ $('city-select').onchange=()=>{const f=cityById.get($('city-select').value);if(f)selectCity(f,true);};
+ $('source-panel').ontoggle=()=>{if($('source-panel').open)$('original').src=overlays[selected].original_url;};
+ $('world').onclick=()=>{if(metrics[selected].source_only)choose('colombie',null,false);$('mode').value='vector';mode();highlightZone(null);map.fitBounds([[-180,-60],[180,80]],{padding:15,duration:0});};choose('colombie');
+});
+map.on('error',e=>{$('render-status').textContent='Map load error: '+e.error.message;console.error(e.error);});
+</script></body></html>

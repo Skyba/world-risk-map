@@ -1,0 +1,1820 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-06",
+  "cadence": "manual_monthly",
+  "provider": "France Diplomatie",
+  "countries": {
+    "gabon": {
+      "iso3": "GAB",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/gabon/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/gabon/20250122_gabon-fcv_az_cle4b261f.jpg",
+        "map_date": "2025-01-22",
+        "page_updated_at": null,
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "ca2dc4837e8921e3903899cea655d8a96067f49c47d56d335c7361cf32d99b2d",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "Not individually cleared",
+        "decision_note": "Review the map-specific terms before distributing derivatives."
+      },
+      "review": {
+        "status": "candidate",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          680,
+          787
+        ],
+        "naive_pixels_including_legend": {
+          "green": 423,
+          "yellow": 225790,
+          "orange": 429,
+          "red": 429
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 240992,
+          "orange": 0,
+          "red": 0
+        },
+        "repaired_pixels": 15769,
+        "unresolved_in_footprint_pixels": 44,
+        "control_point_count": 12,
+        "bbox_city_rmse_km": 5.98,
+        "affine_leave_one_city_out_rmse_km": 6.66,
+        "affine_leave_one_city_out_max_km": 9.65,
+        "valid_geometry": true,
+        "geojson_bytes": 16743,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 1374,
+            "summed_class_xor_pixels": 7
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 780,
+            "summed_class_xor_pixels": 171
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 402,
+            "summed_class_xor_pixels": 724
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 273,
+            "summed_class_xor_pixels": 1560
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 195,
+            "summed_class_xor_pixels": 2704
+          }
+        ],
+        "processing_seconds": 0.17,
+        "tps_leave_one_city_out_rmse_km": 9.57,
+        "tps_leave_one_city_out_max_km": 17.19,
+        "review_status": "experimental_unreviewed",
+        "source_only": false,
+        "limitations": [],
+        "checkpoints": [],
+        "components_before_repair": {
+          "yellow": 176
+        },
+        "components_after_repair": {
+          "yellow": 11
+        },
+        "candidate_polygon_count": {
+          "yellow": 7
+        },
+        "exported_geometry": true,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/gabon/20250122_gabon-fcv_az_cle4b261f.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/gabon/conseils-aux-voyageurs-securite",
+        "map_date": "2025-01-22",
+        "page_date": null,
+        "zone_text_date": "2026-03-05",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 6.66,
+            "maximum_km": 9.65
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 6.66,
+            "maximum_km": 9.64
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 6.65,
+            "maximum_km": 9.59
+          }
+        },
+        "small_component_diagnostics": {
+          "yellow": {
+            "components": 11,
+            "components_at_most_4_pixels": 4,
+            "pixels_in_those_components": 4
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy.",
+        "partition_validation": {
+          "raw_partition_valid": true,
+          "simplified_partition_valid": true,
+          "source_coverage_change_square_pixels": 0.0,
+          "source_classification_changed_pixels": 0,
+          "independent_contour_overlap_km2": 0.0,
+          "shared_partition_overlap_km2": 0.0,
+          "exported_connected_zones": 11,
+          "tiny_components_retained": true,
+          "note": "Topology checks validate geometry against the classified raster, not the correctness of the image classification or advisory boundaries."
+        }
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            8.316727932396857,
+            2.5164579628897
+          ],
+          [
+            14.762674020955837,
+            2.5600514687851588
+          ],
+          [
+            14.695527754542454,
+            -3.9871447790185734
+          ],
+          [
+            8.249581665983472,
+            -4.030674327834315
+          ]
+        ]
+      },
+      "geometry": {
+        "overview": {
+          "sha256": "65ba3fe14f7d39330e3c6256d9b7b5997e56b6c24a0621506a3925cbd77ece34",
+          "scope": "private",
+          "bytes": 8188
+        },
+        "detail": {
+          "sha256": "ac059c72148834bc996f8f7d77f5db76d4867a33f1a18539fce41fa602dec3ac",
+          "scope": "private",
+          "bytes": 9147
+        }
+      }
+    },
+    "senegal": {
+      "iso3": "SEN",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/senegal/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/senegal/20250123_senegal-fcv_az_cle8bec51.jpg",
+        "map_date": "2025-01-23",
+        "page_updated_at": null,
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "ccaea2ec0ada21a12afeb7a5e2f3cbd57af4c09b7e09d9219279a28f510193ad",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "Not individually cleared",
+        "decision_note": "Review the map-specific terms before distributing derivatives."
+      },
+      "review": {
+        "status": "candidate",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          680,
+          561
+        ],
+        "naive_pixels_including_legend": {
+          "green": 1462,
+          "yellow": 141073,
+          "orange": 9121,
+          "red": 232
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 152777,
+          "orange": 9570,
+          "red": 0
+        },
+        "repaired_pixels": 12770,
+        "unresolved_in_footprint_pixels": 143,
+        "control_point_count": 10,
+        "bbox_city_rmse_km": 11.78,
+        "affine_leave_one_city_out_rmse_km": 6.72,
+        "affine_leave_one_city_out_max_km": 14.47,
+        "valid_geometry": true,
+        "geojson_bytes": 31018,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 2449,
+            "summed_class_xor_pixels": 27
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 1417,
+            "summed_class_xor_pixels": 262
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 730,
+            "summed_class_xor_pixels": 1103
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 407,
+            "summed_class_xor_pixels": 2340
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 241,
+            "summed_class_xor_pixels": 4564
+          }
+        ],
+        "processing_seconds": 0.11,
+        "tps_leave_one_city_out_rmse_km": 7.15,
+        "tps_leave_one_city_out_max_km": 13.37,
+        "review_status": "experimental_unreviewed",
+        "source_only": false,
+        "limitations": [],
+        "checkpoints": [],
+        "components_before_repair": {
+          "yellow": 264,
+          "orange": 31
+        },
+        "components_after_repair": {
+          "yellow": 10,
+          "orange": 8
+        },
+        "candidate_polygon_count": {
+          "yellow": 5,
+          "orange": 3
+        },
+        "exported_geometry": true,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/senegal/20250123_senegal-fcv_az_cle8bec51.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/senegal/conseils-aux-voyageurs-securite",
+        "map_date": "2025-01-23",
+        "page_date": null,
+        "zone_text_date": "2026-03-12",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 6.72,
+            "maximum_km": 14.47
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 6.66,
+            "maximum_km": 14.44
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 7.09,
+            "maximum_km": 15.18
+          }
+        },
+        "small_component_diagnostics": {
+          "yellow": {
+            "components": 10,
+            "components_at_most_4_pixels": 6,
+            "pixels_in_those_components": 9
+          },
+          "orange": {
+            "components": 8,
+            "components_at_most_4_pixels": 5,
+            "pixels_in_those_components": 7
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy.",
+        "partition_validation": {
+          "raw_partition_valid": true,
+          "simplified_partition_valid": true,
+          "source_coverage_change_square_pixels": 0.0,
+          "source_classification_changed_pixels": 0,
+          "independent_contour_overlap_km2": 4.5e-05,
+          "shared_partition_overlap_km2": 0.0,
+          "exported_connected_zones": 18,
+          "tiny_components_retained": true,
+          "note": "Topology checks validate geometry against the classified raster, not the correctness of the image classification or advisory boundaries."
+        }
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            -18.164417882727815,
+            16.949322223392517
+          ],
+          [
+            -11.346787632784823,
+            16.911986054135383
+          ],
+          [
+            -11.256290150250651,
+            12.081064156957977
+          ],
+          [
+            -18.073920400193646,
+            12.119224778507736
+          ]
+        ]
+      },
+      "geometry": {
+        "overview": {
+          "sha256": "5c4143caf986aba583d37afd6f5b9a904afb180aed22df915f23d63a823c4c7c",
+          "scope": "private",
+          "bytes": 10227
+        },
+        "detail": {
+          "sha256": "f153440f1cc37462c4a56643989739a34fb033cb5c4ddef9c55e12aaa5e3e58a",
+          "scope": "private",
+          "bytes": 12701
+        }
+      }
+    },
+    "tunisie": {
+      "iso3": "TUN",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/tunisie/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/tunisie/20260204_tunisie-fcv_cle029a16-02632.jpg",
+        "map_date": "2026-02-04",
+        "page_updated_at": null,
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "acdbf48bb9cc25ef70129eff51849f4cdc7c29ade177f03e3a6b4f447c2f0bd3",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "Not individually cleared",
+        "decision_note": "Review the map-specific terms before distributing derivatives."
+      },
+      "review": {
+        "status": "candidate",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          578,
+          940
+        ],
+        "naive_pixels_including_legend": {
+          "green": 3042,
+          "yellow": 108008,
+          "orange": 20656,
+          "red": 21586
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 121470,
+          "orange": 22365,
+          "red": 22141
+        },
+        "repaired_pixels": 17048,
+        "unresolved_in_footprint_pixels": 190,
+        "control_point_count": 15,
+        "bbox_city_rmse_km": 6.96,
+        "affine_leave_one_city_out_rmse_km": 6.28,
+        "affine_leave_one_city_out_max_km": 13.13,
+        "valid_geometry": true,
+        "geojson_bytes": 41279,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 3910,
+            "summed_class_xor_pixels": 44
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 2275,
+            "summed_class_xor_pixels": 444
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 1019,
+            "summed_class_xor_pixels": 1765
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 629,
+            "summed_class_xor_pixels": 3484
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 427,
+            "summed_class_xor_pixels": 6880
+          }
+        ],
+        "processing_seconds": 0.2,
+        "tps_leave_one_city_out_rmse_km": 7.68,
+        "tps_leave_one_city_out_max_km": 13.97,
+        "review_status": "experimental_unreviewed",
+        "source_only": false,
+        "limitations": [],
+        "checkpoints": [],
+        "components_before_repair": {
+          "yellow": 317,
+          "orange": 102,
+          "red": 19
+        },
+        "components_after_repair": {
+          "yellow": 6,
+          "orange": 27,
+          "red": 6
+        },
+        "candidate_polygon_count": {
+          "yellow": 6,
+          "orange": 21,
+          "red": 6
+        },
+        "exported_geometry": true,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/tunisie/20260204_tunisie-fcv_cle029a16-02632.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/tunisie/conseils-aux-voyageurs-securite",
+        "map_date": "2026-02-04",
+        "page_date": null,
+        "zone_text_date": "2026-03-13",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 6.28,
+            "maximum_km": 13.13
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 5.85,
+            "maximum_km": 13.32
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 5.4,
+            "maximum_km": 12.57
+          }
+        },
+        "small_component_diagnostics": {
+          "yellow": {
+            "components": 6,
+            "components_at_most_4_pixels": 1,
+            "pixels_in_those_components": 1
+          },
+          "orange": {
+            "components": 27,
+            "components_at_most_4_pixels": 9,
+            "pixels_in_those_components": 23
+          },
+          "red": {
+            "components": 6,
+            "components_at_most_4_pixels": 0,
+            "pixels_in_those_components": 0
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy.",
+        "partition_validation": {
+          "raw_partition_valid": true,
+          "simplified_partition_valid": true,
+          "source_coverage_change_square_pixels": 0.0,
+          "source_classification_changed_pixels": 0,
+          "independent_contour_overlap_km2": 0.061855,
+          "shared_partition_overlap_km2": 0.0,
+          "exported_connected_zones": 39,
+          "tiny_components_retained": true,
+          "note": "Topology checks validate geometry against the classified raster, not the correctness of the image classification or advisory boundaries."
+        }
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            6.320957195459245,
+            37.54842216165747
+          ],
+          [
+            12.318354226846859,
+            37.51733689425501
+          ],
+          [
+            12.245085049205876,
+            29.99447449683552
+          ],
+          [
+            6.2476880178182626,
+            30.028418247677592
+          ]
+        ]
+      },
+      "geometry": {
+        "overview": {
+          "sha256": "cfc924de06c3b8d8b9ceb54a6c7ef7e2247f7252ce5f69bd372e41210b933f6f",
+          "scope": "private",
+          "bytes": 17033
+        },
+        "detail": {
+          "sha256": "fd46ec6c4ae97018ffc4882405b356b15ac0d1b1e6c05599b7303c24a283290e",
+          "scope": "private",
+          "bytes": 19984
+        }
+      }
+    },
+    "colombie": {
+      "iso3": "COL",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/colombie/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/colombie/20260527_colombie-fcv.jpg",
+        "map_date": "2026-05-27",
+        "page_updated_at": "2026-09-21",
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "fd24401bc3bf9a5f6bf38e8994c7f70c954a865c8ee344d70f5c40a3d524aadf",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "CC BY-NC-ND; version not printed",
+        "decision_note": "Conflicting map-specific marking needs clarification before sharing traced or modified geometry."
+      },
+      "review": {
+        "status": "candidate",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          680,
+          1008
+        ],
+        "naive_pixels_including_legend": {
+          "green": 1983,
+          "yellow": 51503,
+          "orange": 103734,
+          "red": 50510
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 63577,
+          "orange": 108460,
+          "red": 55147
+        },
+        "repaired_pixels": 23401,
+        "unresolved_in_footprint_pixels": 794,
+        "control_point_count": 14,
+        "bbox_city_rmse_km": 179.38,
+        "affine_leave_one_city_out_rmse_km": 11.96,
+        "affine_leave_one_city_out_max_km": 35.24,
+        "valid_geometry": true,
+        "geojson_bytes": 68195,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 5242,
+            "summed_class_xor_pixels": 108
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 3230,
+            "summed_class_xor_pixels": 608
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 1650,
+            "summed_class_xor_pixels": 2446
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 1026,
+            "summed_class_xor_pixels": 5106
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 719,
+            "summed_class_xor_pixels": 9622
+          }
+        ],
+        "processing_seconds": 0.29,
+        "tps_leave_one_city_out_rmse_km": 11.84,
+        "tps_leave_one_city_out_max_km": 30.3,
+        "review_status": "partial_mainland_candidate",
+        "source_only": false,
+        "limitations": [
+          "San Andrés and Providencia are shown in a separate inset; excluded from the mainland transform and not yet georeferenced.",
+          "Small circular city exceptions and air-only access conditions need separate point/exception records.",
+          "No publication approval: candidate polygons retain positional and segmentation uncertainty."
+        ],
+        "checkpoints": [
+          {
+            "pixel": [
+              270,
+              220
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              285,
+              400
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              361,
+              507
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              411,
+              606
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              398,
+              739
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              492,
+              448
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              154,
+              369
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              504,
+              376
+            ],
+            "expected": 4,
+            "actual": 0,
+            "pass": false
+          },
+          {
+            "pixel": [
+              94,
+              609
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              72,
+              55
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          }
+        ],
+        "components_before_repair": {
+          "yellow": 241,
+          "orange": 100,
+          "red": 65
+        },
+        "components_after_repair": {
+          "yellow": 19,
+          "orange": 60,
+          "red": 12
+        },
+        "candidate_polygon_count": {
+          "yellow": 20,
+          "orange": 6,
+          "red": 14
+        },
+        "exported_geometry": true,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/colombie/20260527_colombie-fcv.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/colombie/conseils-aux-voyageurs-securite",
+        "map_date": "2026-05-27",
+        "page_date": "2026-09-21",
+        "zone_text_date": "2026-05-27",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 11.96,
+            "maximum_km": 35.24
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 12.6,
+            "maximum_km": 35.58
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 13.48,
+            "maximum_km": 37.96
+          }
+        },
+        "small_component_diagnostics": {
+          "yellow": {
+            "components": 19,
+            "components_at_most_4_pixels": 3,
+            "pixels_in_those_components": 10
+          },
+          "orange": {
+            "components": 60,
+            "components_at_most_4_pixels": 55,
+            "pixels_in_those_components": 80
+          },
+          "red": {
+            "components": 12,
+            "components_at_most_4_pixels": 2,
+            "pixels_in_those_components": 4
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy.",
+        "partition_validation": {
+          "raw_partition_valid": true,
+          "simplified_partition_valid": true,
+          "source_coverage_change_square_pixels": 0.0,
+          "source_classification_changed_pixels": 0,
+          "independent_contour_overlap_km2": 0.340659,
+          "shared_partition_overlap_km2": 0.0,
+          "exported_connected_zones": 91,
+          "tiny_components_retained": true,
+          "note": "Topology checks validate geometry against the classified raster, not the correctness of the image classification or advisory boundaries."
+        }
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            -80.12778488722212,
+            14.260903014395373
+          ],
+          [
+            -66.26952335537018,
+            14.241046458843787
+          ],
+          [
+            -66.33585681224227,
+            -4.4390626017112895
+          ],
+          [
+            -80.1941183440942,
+            -4.418636768046475
+          ]
+        ]
+      },
+      "geometry": {
+        "overview": {
+          "sha256": "d0894e7cc33f3c1172b43c44c094c1cd29e51dbcc853d4edd60dc96eb03cebf5",
+          "scope": "private",
+          "bytes": 34953
+        },
+        "detail": {
+          "sha256": "9903c1e496163cbf6cd05e0c57e888a4c725d978648068c9d96635a71d48afe2",
+          "scope": "private",
+          "bytes": 37329
+        }
+      },
+      "exceptions": {
+        "sha256": "666f7cac78236ec2d802ce6796d2bf4f4a5b5b61961760fed3f3adf3c3239b9b",
+        "scope": "private",
+        "bytes": 4890
+      }
+    },
+    "indonesie": {
+      "iso3": "IDN",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/indonesie/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/indonesie/20190705_indonesie-fcv_bd_cle09546a-5a023.jpg",
+        "map_date": "2019-07-05",
+        "page_updated_at": "2026-09-15",
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "41202b6bddda6389af64833f6cc0401b8bd6be2d08879011dc25b42cdc625eee",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "Not individually cleared",
+        "decision_note": "Review the map-specific terms before distributing derivatives."
+      },
+      "review": {
+        "status": "candidate",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          680,
+          421
+        ],
+        "naive_pixels_including_legend": {
+          "green": 425,
+          "yellow": 17066,
+          "orange": 3897,
+          "red": 221
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 18789,
+          "orange": 4082,
+          "red": 0
+        },
+        "repaired_pixels": 2546,
+        "unresolved_in_footprint_pixels": 8,
+        "control_point_count": 14,
+        "bbox_city_rmse_km": 57.89,
+        "affine_leave_one_city_out_rmse_km": 24.9,
+        "affine_leave_one_city_out_max_km": 42.14,
+        "valid_geometry": true,
+        "geojson_bytes": 25933,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 1565,
+            "summed_class_xor_pixels": 60
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 1057,
+            "summed_class_xor_pixels": 191
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 586,
+            "summed_class_xor_pixels": 797
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 388,
+            "summed_class_xor_pixels": 1478
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 267,
+            "summed_class_xor_pixels": 2669
+          }
+        ],
+        "processing_seconds": 0.11,
+        "tps_leave_one_city_out_rmse_km": 34.53,
+        "tps_leave_one_city_out_max_km": 47.76,
+        "review_status": "island_coverage_incomplete",
+        "source_only": false,
+        "limitations": [
+          "The published image is only 680 pixels wide across a very large archipelago; tiny islands and coastlines cannot be recovered reliably.",
+          "Eastern Papua has no usable city control point in this fit: its alignment is extrapolated.",
+          "Maritime restrictions in the text are not encoded as coloured sea zones; retain them as text-only restrictions.",
+          "The image date is 2019 despite the current page and zone-text dates; this is the image currently linked by the source, not a freshness guarantee."
+        ],
+        "checkpoints": [
+          {
+            "pixel": [
+              47,
+              99
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              116,
+              161
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              285,
+              135
+            ],
+            "expected": 2,
+            "actual": 0,
+            "pass": false
+          },
+          {
+            "pixel": [
+              307,
+              161
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              374,
+              203
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              245,
+              260
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              600,
+              215
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              625,
+              244
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              478,
+              140
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          },
+          {
+            "pixel": [
+              580,
+              53
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          }
+        ],
+        "components_before_repair": {
+          "yellow": 153,
+          "orange": 17
+        },
+        "components_after_repair": {
+          "yellow": 50,
+          "orange": 3
+        },
+        "candidate_polygon_count": {
+          "yellow": 38,
+          "orange": 2
+        },
+        "exported_geometry": true,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/indonesie/20190705_indonesie-fcv_bd_cle09546a-5a023.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/indonesie/conseils-aux-voyageurs-securite",
+        "map_date": "2019-07-05",
+        "page_date": "2026-09-15",
+        "zone_text_date": "2026-03-09",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 24.9,
+            "maximum_km": 42.14
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 25.02,
+            "maximum_km": 41.91
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 25.03,
+            "maximum_km": 43.72
+          }
+        },
+        "small_component_diagnostics": {
+          "yellow": {
+            "components": 50,
+            "components_at_most_4_pixels": 16,
+            "pixels_in_those_components": 32
+          },
+          "orange": {
+            "components": 3,
+            "components_at_most_4_pixels": 1,
+            "pixels_in_those_components": 4
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy.",
+        "partition_validation": {
+          "raw_partition_valid": true,
+          "simplified_partition_valid": true,
+          "source_coverage_change_square_pixels": 0.0,
+          "source_classification_changed_pixels": 0,
+          "independent_contour_overlap_km2": 0.0,
+          "shared_partition_overlap_km2": 0.0,
+          "exported_connected_zones": 53,
+          "tiny_components_retained": true,
+          "note": "Topology checks validate geometry against the classified raster, not the correctness of the image classification or advisory boundaries."
+        }
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            93.59656112603338,
+            11.409790247997304
+          ],
+          [
+            143.2609637524527,
+            11.5306485623016
+          ],
+          [
+            143.3205614639291,
+            -13.787907266253404
+          ],
+          [
+            93.65615883750974,
+            -13.90764420080283
+          ]
+        ]
+      },
+      "geometry": {
+        "overview": {
+          "sha256": "e9e7cd210b4d256e8ca9a77756761c7cde23ac8bc41433033fce1bfc3e87f68d",
+          "scope": "private",
+          "bytes": 33967
+        },
+        "detail": {
+          "sha256": "0df789d030958f9197237f420d304a78a6c8bdb6c70e0b755c8ab7fbed50c1eb",
+          "scope": "private",
+          "bytes": 39553
+        }
+      }
+    },
+    "egypte": {
+      "iso3": "EGY",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/egypte/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/egypte/20260130_egypte_fcv_v2_005-cle0ff3a9-ffb82.jpg",
+        "map_date": "2026-01-30",
+        "page_updated_at": "2026-09-21",
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "82553726d5d0e9e501f5ea43b0d0453e2d8f1d07f912caa9ce7899c911ec0fac",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "Not individually cleared",
+        "decision_note": "Review the map-specific terms before distributing derivatives."
+      },
+      "review": {
+        "status": "candidate",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          680,
+          773
+        ],
+        "naive_pixels_including_legend": {
+          "green": 1806,
+          "yellow": 115035,
+          "orange": 86651,
+          "red": 37324
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 134700,
+          "orange": 90257,
+          "red": 40316
+        },
+        "repaired_pixels": 27452,
+        "unresolved_in_footprint_pixels": 463,
+        "control_point_count": 14,
+        "bbox_city_rmse_km": 12.28,
+        "affine_leave_one_city_out_rmse_km": 9.14,
+        "affine_leave_one_city_out_max_km": 14.47,
+        "valid_geometry": true,
+        "geojson_bytes": 101932,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 8927,
+            "summed_class_xor_pixels": 231
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 6110,
+            "summed_class_xor_pixels": 1048
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 2504,
+            "summed_class_xor_pixels": 5414
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 1506,
+            "summed_class_xor_pixels": 9427
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 1122,
+            "summed_class_xor_pixels": 17765
+          }
+        ],
+        "processing_seconds": 0.27,
+        "tps_leave_one_city_out_rmse_km": 13.24,
+        "tps_leave_one_city_out_max_km": 18.64,
+        "review_status": "restriction_overlay_missing",
+        "source_only": false,
+        "limitations": [
+          "Hatched areas mean closed to civilians: a separate restriction attribute/layer is required beyond the four risk colours.",
+          "Hatching interrupts the red fill; stripe repair may join or split geometry and requires manual tracing/review.",
+          "The Siwa road corridor and disputed southern boundary require explicit checks.",
+          "Colour polygons alone are incomplete advice; the restriction overlay is not yet digitized."
+        ],
+        "checkpoints": [
+          {
+            "pixel": [
+              92,
+              82
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              125,
+              127
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              243,
+              469
+            ],
+            "expected": 3,
+            "actual": 3,
+            "pass": true
+          },
+          {
+            "pixel": [
+              310,
+              319
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              462,
+              416
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              487,
+              189
+            ],
+            "expected": 2,
+            "actual": 2,
+            "pass": true
+          },
+          {
+            "pixel": [
+              475,
+              85
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              111,
+              587
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              294,
+              588
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              552,
+              641
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          }
+        ],
+        "components_before_repair": {
+          "yellow": 748,
+          "orange": 147,
+          "red": 120
+        },
+        "components_after_repair": {
+          "yellow": 70,
+          "orange": 46,
+          "red": 56
+        },
+        "candidate_polygon_count": {
+          "yellow": 69,
+          "orange": 10,
+          "red": 57
+        },
+        "exported_geometry": true,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/egypte/20260130_egypte_fcv_v2_005-cle0ff3a9-ffb82.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/egypte/conseils-aux-voyageurs-securite",
+        "map_date": "2026-01-30",
+        "page_date": "2026-09-21",
+        "zone_text_date": "2026-03-05",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 9.14,
+            "maximum_km": 14.47
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 9.45,
+            "maximum_km": 14.8
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 8.21,
+            "maximum_km": 11.02
+          }
+        },
+        "small_component_diagnostics": {
+          "yellow": {
+            "components": 70,
+            "components_at_most_4_pixels": 35,
+            "pixels_in_those_components": 74
+          },
+          "orange": {
+            "components": 46,
+            "components_at_most_4_pixels": 35,
+            "pixels_in_those_components": 84
+          },
+          "red": {
+            "components": 56,
+            "components_at_most_4_pixels": 1,
+            "pixels_in_those_components": 4
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy.",
+        "partition_validation": {
+          "raw_partition_valid": true,
+          "simplified_partition_valid": true,
+          "source_coverage_change_square_pixels": 0.0,
+          "source_classification_changed_pixels": 0,
+          "independent_contour_overlap_km2": 1.028938,
+          "shared_partition_overlap_km2": 0.0,
+          "exported_connected_zones": 172,
+          "tiny_components_retained": true,
+          "note": "Topology checks validate geometry against the classified raster, not the correctness of the image classification or advisory boundaries."
+        }
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            24.501729974660364,
+            31.843953676506626
+          ],
+          [
+            37.242811557474404,
+            32.00269802938067
+          ],
+          [
+            37.15857821617973,
+            20.219577451418623
+          ],
+          [
+            24.417496633365683,
+            20.043972733868507
+          ]
+        ]
+      },
+      "geometry": {
+        "overview": {
+          "sha256": "6b37b0d3fce18f7b37f1f256d587259fb3dd11645d232e3229a3eaeca80f7df4",
+          "scope": "private",
+          "bytes": 45393
+        },
+        "detail": {
+          "sha256": "08ee77cbd9efe1f771f5a5539772af151575c1175b6a640def6b533511398382",
+          "scope": "private",
+          "bytes": 48328
+        }
+      }
+    },
+    "russie": {
+      "iso3": "RUS",
+      "source": {
+        "page_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/russie/conseils-aux-voyageurs-securite",
+        "map_url": "https://www.diplomatie.gouv.fr/files/files/cav/russie/20230624_russie-fcv_bd_cle01811f-20860.jpg",
+        "map_date": "2023-06-24",
+        "page_updated_at": "2026-09-15",
+        "retrieved_at": "2026-10-06",
+        "map_sha256": "a33bcb8c0848c9db094e0b34709b6040f3b53e2c4aebe8a81559bfddc1c68c32",
+        "page_sha256": null
+      },
+      "rights": {
+        "status": "needs_review",
+        "site_terms_url": "https://www.diplomatie.gouv.fr/fr/mentions-legales",
+        "map_marking": "Not individually cleared",
+        "decision_note": "Review the map-specific terms before distributing derivatives."
+      },
+      "review": {
+        "status": "withheld",
+        "reviewed_at": null,
+        "method": "Manual control points, classified source pixels, simplified display geometry. Not independently validated."
+      },
+      "context": null,
+      "display": {
+        "source_size": [
+          680,
+          455
+        ],
+        "naive_pixels_including_legend": {
+          "green": 289,
+          "yellow": 903,
+          "orange": 252,
+          "red": 93440
+        },
+        "cropped_repaired_pixels": {
+          "green": 0,
+          "yellow": 0,
+          "orange": 0,
+          "red": 108153
+        },
+        "repaired_pixels": 14981,
+        "unresolved_in_footprint_pixels": 591,
+        "control_point_count": 13,
+        "bbox_city_rmse_km": 4488.68,
+        "affine_leave_one_city_out_rmse_km": 913.04,
+        "affine_leave_one_city_out_max_km": 1542.94,
+        "valid_geometry": null,
+        "geojson_bytes": 42,
+        "simplification": [
+          {
+            "tolerance_px": 0,
+            "vertices": 2584,
+            "summed_class_xor_pixels": 23
+          },
+          {
+            "tolerance_px": 0.5,
+            "vertices": 1726,
+            "summed_class_xor_pixels": 253
+          },
+          {
+            "tolerance_px": 1,
+            "vertices": 1019,
+            "summed_class_xor_pixels": 1076
+          },
+          {
+            "tolerance_px": 2,
+            "vertices": 695,
+            "summed_class_xor_pixels": 2193
+          },
+          {
+            "tolerance_px": 4,
+            "vertices": 536,
+            "summed_class_xor_pixels": 3874
+          }
+        ],
+        "processing_seconds": 0.14,
+        "tps_leave_one_city_out_rmse_km": 359.57,
+        "tps_leave_one_city_out_max_km": 946.99,
+        "review_status": "withheld_projection_and_boundary_review",
+        "source_only": true,
+        "limitations": [
+          "Source-only validation case: no candidate geography is added to the world layer.",
+          "Large east-west extent requires projection-aware georeferencing and antimeridian handling.",
+          "A whole-country red advisory can use existing boundaries only after the territory/boundary policy is reconciled with the French source."
+        ],
+        "checkpoints": [
+          {
+            "pixel": [
+              286,
+              214
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              359,
+              235
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              419,
+              197
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              534,
+              137
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              465,
+              286
+            ],
+            "expected": 4,
+            "actual": 4,
+            "pass": true
+          },
+          {
+            "pixel": [
+              38,
+              43
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          },
+          {
+            "pixel": [
+              260,
+              56
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          },
+          {
+            "pixel": [
+              54,
+              436
+            ],
+            "expected": 0,
+            "actual": 0,
+            "pass": true
+          }
+        ],
+        "components_before_repair": {
+          "red": 349
+        },
+        "components_after_repair": {
+          "red": 25
+        },
+        "candidate_polygon_count": {
+          "red": 20
+        },
+        "exported_geometry": false,
+        "source_image_url": "https://www.diplomatie.gouv.fr/files/files/cav/russie/20230624_russie-fcv_bd_cle01811f-20860.jpg",
+        "source_url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/russie/conseils-aux-voyageurs-securite",
+        "map_date": "2023-06-24",
+        "page_date": "2026-09-15",
+        "zone_text_date": "2026-03-12",
+        "projection_comparison": {
+          "mercator": {
+            "leave_one_out_rms_km": 913.04,
+            "maximum_km": 1542.94
+          },
+          "local_equidistant": {
+            "leave_one_out_rms_km": 913.13,
+            "maximum_km": 1397.52
+          },
+          "local_azimuthal": {
+            "leave_one_out_rms_km": 155.57,
+            "maximum_km": 264.68
+          },
+          "conic_hypothesis": {
+            "leave_one_out_rms_km": 149.26,
+            "maximum_km": 247.25
+          }
+        },
+        "small_component_diagnostics": {
+          "red": {
+            "components": 25,
+            "components_at_most_4_pixels": 5,
+            "pixels_in_those_components": 9
+          }
+        },
+        "approved_for_publication": false,
+        "validation_scope": "Source-pixel spot checks and city-based leave-one-out alignment; not independently surveyed boundary accuracy."
+      },
+      "image_overlay": {
+        "coordinates": [
+          [
+            5.108070233096411,
+            71.2919337826718
+          ],
+          [
+            149.51560908022572,
+            66.68617313363623
+          ],
+          [
+            165.8347658369364,
+            42.968812881802954
+          ],
+          [
+            21.427226989807103,
+            51.682071907820436
+          ]
+        ]
+      },
+      "geometry": {}
+    }
+  },
+  "common": {
+    "land": {
+      "sha256": "e35b69bdef77fc150c205fbe11d3420c6a4ee0ed74fc57c0d32f1a324169c805",
+      "scope": "public",
+      "bytes": 911288
+    },
+    "cities": {
+      "sha256": "1d6a85f335e9cbce0b9196f63761bf7b53c43589c498d5e85d77a42450e4b2a5",
+      "scope": "public",
+      "bytes": 109813
+    }
+  },
+  "display_metrics": {
+    "purpose": "Approximate display geometry; source extraction remains unchanged. Not approved advisory boundaries.",
+    "countries": {
+      "gabon": {
+        "raw_vertices": 2307,
+        "repaired_print_gap_pixels": 44,
+        "promoted_city_exceptions": [],
+        "hatch_gap_pixels_recovered": 0,
+        "levels": {
+          "overview": {
+            "tolerance_source_pixels": 3.5,
+            "features": 6,
+            "vertices": 414,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.51,
+            "trimmed_outside_basemap_km2": 7265.3
+          },
+          "detail": {
+            "tolerance_source_pixels": 2.5,
+            "features": 6,
+            "vertices": 477,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.338,
+            "trimmed_outside_basemap_km2": 7226.84
+          }
+        }
+      },
+      "senegal": {
+        "raw_vertices": 3391,
+        "repaired_print_gap_pixels": 143,
+        "promoted_city_exceptions": [],
+        "hatch_gap_pixels_recovered": 0,
+        "levels": {
+          "overview": {
+            "tolerance_source_pixels": 3.5,
+            "features": 10,
+            "vertices": 568,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 1.019,
+            "trimmed_outside_basemap_km2": 2024.21
+          },
+          "detail": {
+            "tolerance_source_pixels": 2.5,
+            "features": 10,
+            "vertices": 763,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.664,
+            "trimmed_outside_basemap_km2": 2099.0
+          }
+        }
+      },
+      "tunisie": {
+        "raw_vertices": 5707,
+        "repaired_print_gap_pixels": 190,
+        "promoted_city_exceptions": [],
+        "hatch_gap_pixels_recovered": 0,
+        "levels": {
+          "overview": {
+            "tolerance_source_pixels": 3.5,
+            "features": 39,
+            "vertices": 793,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 1.271,
+            "trimmed_outside_basemap_km2": 1536.81
+          },
+          "detail": {
+            "tolerance_source_pixels": 2.5,
+            "features": 39,
+            "vertices": 1048,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.935,
+            "trimmed_outside_basemap_km2": 1589.85
+          }
+        }
+      },
+      "colombie": {
+        "raw_vertices": 8463,
+        "repaired_print_gap_pixels": 794,
+        "promoted_city_exceptions": [
+          "Quibdó",
+          "Nuquí",
+          "Bahía Solano",
+          "Capurganá",
+          "Popayán",
+          "Pasto",
+          "Florencia",
+          "San José del Guaviare",
+          "Mitú"
+        ],
+        "hatch_gap_pixels_recovered": 0,
+        "levels": {
+          "overview": {
+            "tolerance_source_pixels": 3.5,
+            "features": 72,
+            "vertices": 1683,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 1.189,
+            "trimmed_outside_basemap_km2": 32971.23
+          },
+          "detail": {
+            "tolerance_source_pixels": 2.5,
+            "features": 72,
+            "vertices": 1921,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.792,
+            "trimmed_outside_basemap_km2": 33135.9
+          }
+        }
+      },
+      "indonesie": {
+        "raw_vertices": 2211,
+        "repaired_print_gap_pixels": 8,
+        "promoted_city_exceptions": [],
+        "hatch_gap_pixels_recovered": 0,
+        "levels": {
+          "overview": {
+            "tolerance_source_pixels": 1.4,
+            "features": 46,
+            "vertices": 1680,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 1.552,
+            "trimmed_outside_basemap_km2": 95314.72
+          },
+          "detail": {
+            "tolerance_source_pixels": 0.8,
+            "features": 46,
+            "vertices": 2085,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.345,
+            "trimmed_outside_basemap_km2": 95701.75
+          }
+        }
+      },
+      "egypte": {
+        "raw_vertices": 17324,
+        "repaired_print_gap_pixels": 463,
+        "promoted_city_exceptions": [],
+        "hatch_gap_pixels_recovered": 29285,
+        "levels": {
+          "overview": {
+            "tolerance_source_pixels": 3.5,
+            "features": 139,
+            "vertices": 1849,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.958,
+            "trimmed_outside_basemap_km2": 57056.67
+          },
+          "detail": {
+            "tolerance_source_pixels": 2.5,
+            "features": 139,
+            "vertices": 2125,
+            "inter_risk_overlap_km2": 0.0,
+            "valid_geometry": true,
+            "simplification_changed_classified_pixels_percent": 0.684,
+            "trimmed_outside_basemap_km2": 56931.93
+          }
+        }
+      }
+    },
+    "tolerances_source_pixels": {
+      "overview": 3.5,
+      "detail": 2.5
+    },
+    "indonesia_tolerances_source_pixels": {
+      "overview": 1.4,
+      "detail": 0.8
+    },
+    "method": "Repair enclosed printing gaps <=320 pixels and <=8 pixels from classified colour; promote nine visually identified city callouts; simplify shared polygon coverage; clip to the same Natural Earth boundary as the basemap; round to five decimal places. Additional unclassified gaps are filled only inside the approximate civilian-restriction envelopes.",
+    "city_layer": {
+      "ordinary_cities": 462,
+      "city_exceptions": 9,
+      "unresolved_positions": [
+        "Bahía Solano",
+        "Capurganá"
+      ],
+      "semantics": "Neutral city markers are named places, not advisory classifications; capitals use squares. Coloured city symbols have no implied radius or route corridor. Exception extraction is partial; connected yellow areas remain polygons.",
+      "capital_squares": 200
+    },
+    "closed_to_civilians": {
+      "regions": [
+        "Southeastern border",
+        "Western desert"
+      ],
+      "features": 2,
+      "source": "https://www.diplomatie.gouv.fr/files/files/cav/egypte/20260130_egypte_fcv_v2_005-cle0ff3a9-ffb82.jpg",
+      "method": "Approximate manual hatch envelopes in source pixel coordinates, extended six pixels to join stripe ends. Only red and unclassified hatch gaps are relabelled; existing yellow/orange pixels are preserved. Risk and restriction share the same partition and zoom geometry.",
+      "approved_for_publication": false
+    },
+    "overview_bytes": 191436,
+    "detail_bytes": 220008,
+    "raw_zone_bytes": 1986981,
+    "raw_viewer_bytes": 10147397,
+    "viewer_bytes": 1762542,
+    "viewer_size_reduction_percent": 82.6,
+    "latest_validation": {
+      "restricted_regions_at_each_detail_level": 2,
+      "restriction_base_colour": "red",
+      "inter_risk_overlap_km2": 0,
+      "capital_flags_checked": [
+        "Cairo",
+        "Bogotá",
+        "Libreville",
+        "Dakar",
+        "Tunis",
+        "Jakarta"
+      ],
+      "ordinary_city_flag_checked": "Alexandria",
+      "javascript_syntax": "passed",
+      "browser_checks": [
+        "Black hatch pattern and continuous red fill visible in Egypt",
+        "Western desert click explains closed-to-civilians restriction",
+        "Capital square visible for Cairo at country and city scales",
+        "Ordinary cities remain round",
+        "Updated legend visible",
+        "No console errors observed"
+      ],
+      "geometry_note": "Restriction envelopes are approximate manual candidates and remain unapproved."
+    }
+  }
+}

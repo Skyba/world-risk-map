@@ -1,0 +1,13 @@
+{
+  "snapshot": "2026-10-07",
+  "world_overview_geojson_bytes": 1621474,
+  "world_overview_topojson_bytes": 1364809,
+  "world_overview_reduction_percent": 15.8,
+  "all_advisory_geometry_unique_bytes": 1737787,
+  "world_snapshot_manifest_bytes": 293416,
+  "browser_initial_geometry_and_places_bytes": 4356044,
+  "browser_initial_geometry_and_places_gzip_estimate": 1391983,
+  "initial_geometry_asset_count": 11,
+  "note": "Gzip is a deployment-size estimate. The current Python preview server does not compress responses. HTML, JS, CSS, MapLibre, glyphs and manifest are excluded from initial geometry totals.",
+  "browser_smoothed_world_overview_bytes": 2105163
+}

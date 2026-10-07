@@ -1,0 +1,5 @@
+topojson==2.1
+shapely==2.1.2
+numpy==2.3.5
+beautifulsoup4==4.15.0
+pycountry==26.2.16
