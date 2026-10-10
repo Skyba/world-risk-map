@@ -1,6 +1,6 @@
 # World Risk Map
 
-Independent visualisation of government travel advice. France Diplomatie is the primary source; clearly labelled UK FCDO guidance fills some missing advice coverage. Source repository: [Skyba/world-risk-map](https://github.com/Skyba/world-risk-map). Requested website: `riskmap.basilev.com`.
+Independent visualisation of government travel advice. France Diplomatie is the primary source; clearly labelled UK FCDO guidance fills some missing advice coverage. [Open the live map](https://world-risk-map.grassy-ocean-3269.chatgpt.site). Source repository: [Skyba/world-risk-map](https://github.com/Skyba/world-risk-map). Custom domain `riskmap.basilev.com` is registered with the host and awaits DNS configuration.
 
 The worldwide preview contains 263 selectable country/territory records, world-map colour geometry in 194 of them, six higher-detail country layers and 7,342 named places. Advice is linked for 202 records through France Diplomatie and another 34 through UK FCDO. These are geographic records, not counts of sovereign states or distinct source pages. The French catalogue supplied 194 security pages; some pages serve multiple destinations. Twenty-seven small territories, dependencies or disputed areas have no matched dedicated advice page.
 
@@ -75,6 +75,16 @@ Build the authorized snapshot for deployment:
 .venv/bin/python scripts/world.py build
 ```
 
-The generated `dist/` is the complete static deployment. Raw maps, local caches and original geometry objects stay under ignored directories and are not uploaded wholesale. The Sites project is recorded in `.openai/hosting.json`; its source and the public GitHub repository use the same Git commits. Deployment packages contain `dist/` and the hosting manifest. The intended custom domain is `riskmap.basilev.com`.
+The generated `dist/` is the complete static deployment. Raw maps, local caches and original geometry objects stay under ignored directories and are not uploaded wholesale. The Sites project is recorded in `.openai/hosting.json`; each deployment uses an exact source commit also pushed to GitHub. Deployment packages contain `dist/` and the hosting manifest. The first public deployment uses commit `4ca446fa297e5979a44b7e78b1b1e209d6fcbea1` and was verified over anonymous HTTPS, with live country search, detail rendering, labels and official source links.
+
+The custom domain needs these Cloudflare DNS records in the `basilev.com` zone. Use DNS only (grey cloud) for the CNAME, with TTL Auto; keep the verification TXT records after activation. Record names below are relative to `basilev.com`.
+
+| Type | Name | Value |
+| --- | --- | --- |
+| CNAME | `riskmap` | `custom-domains.chatgpt.site` |
+| TXT | `_openai-site-verification.riskmap` | `openai-site-verification=HScs5_ILQWspElHMRQwM1pE_euI-NbGCF0YuWtj0wtY` |
+| TXT | `_cf-custom-hostname.riskmap` | `7afb42e3-6663-4dc2-8d35-8054d07d77c8` |
+
+Once DNS is configured, refresh the custom-domain status for domain ID `appgdom_6ac981f740b08191982b471d8afaad2f` in the project recorded by the hosting manifest. Wait for both domain and SSL status to become active, then verify `https://riskmap.basilev.com` before marking the domain live.
 
 A new monthly snapshot requires a new recorded publication decision after reviewing the changes. Passing geometry tests alone does not authorize a different snapshot. Approximate boundaries, missing islands and disputed areas remain limitations of this beta; use the linked official advice when planning travel.

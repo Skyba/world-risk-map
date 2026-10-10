@@ -121,9 +121,8 @@
     "detailed_countries": 6,
     "city_count": 7342
   },
-  "publication_blockers": 194,
   "snapshot": "2026-10-07",
-  "unit_tests_passed": 13,
+  "unit_tests_passed": 14,
   "browser_checks": [
     "world rendering",
     "country search",
@@ -142,8 +141,8 @@
   "browser_console_errors": 0,
   "javascript_syntax": "passed",
   "python_sources_compile": "passed",
-  "public_build": "correctly refused while data is unreviewed and uncleared",
-  "published": false,
+  "public_build": "passed with owner release decision bound to unchanged snapshot",
+  "published": true,
   "browser_renderer": "MapLibre GL JS 5.12.0",
   "display_smoothing": {
     "overview_features_checked": 424,
@@ -153,5 +152,18 @@
     "coverage_unchanged": true,
     "new_overlaps": 0,
     "polygon_components_and_holes_preserved": true
-  }
+  },
+  "unreviewed_or_uncleared_geometry_records": 194,
+  "public_url": "https://world-risk-map.grassy-ocean-3269.chatgpt.site",
+  "deployed_commit": "4ca446fa297e5979a44b7e78b1b1e209d6fcbea1",
+  "custom_domain_status": "registered; awaiting DNS configuration",
+  "public_browser_checks": [
+    "world rendering",
+    "Egypt country search and detailed zones",
+    "country border selection",
+    "square capitals and city labels",
+    "official advice link, excerpt and dates",
+    "no browser console errors",
+    "anonymous HTTPS status 200"
+  ]
 }
