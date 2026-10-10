@@ -2,11 +2,13 @@
 
 The root MIT licence applies to this project's software and authored documentation. It does not relicense data, maps, imagery, fonts or third-party libraries.
 
+On 9 October 2026 the project owner explicitly authorized public redistribution of the traced and smoothed zones and requested deployment without pursuing the proposed ministry clarification. `data/publication.json` records that release decision, bound to the 7 October snapshot. This is the owner's publication decision; no separate ministry permission has been obtained, and the source licence observations below remain documented. The website distributes generated display geometry, while original source images and extraction caches remain excluded from Git and deployment.
+
 | Component | Position as checked 6 October 2026 | Action before publication |
 | --- | --- | --- |
 | France Diplomatie general website content | The legal notice offers Licence Ouverte 2.0 except for specified third-party rights, with source/date attribution and no misleading reuse. | Keep the source link, source update date and transformation notice. Check each map's own markings. |
-| World security image dated 25 September 2026 | The image also visibly carries CC BY-NC-ND. | Worldwide extracted geometry remains private pending permission clarification. |
-| Colombia security image dated 27 May 2026 | The image visibly carries CC BY-NC-ND; the badge does not specify a version. | Clarify permission for the traced, simplified and recoloured derivative or obtain explicitly open geographic data. Current candidate shapes remain private. |
+| World security image dated 25 September 2026 | The image also visibly carries CC BY-NC-ND. | Display geometry released by owner decision recorded above; original imagery is not bundled. |
+| Colombia security image dated 27 May 2026 | The image visibly carries CC BY-NC-ND; the badge does not specify a version. | Display geometry released by owner decision recorded above; no separate permission is documented. |
 | Other advisory maps | No individual publication clearance has been recorded. | Review map-specific rights rather than assuming the general website terms settle every asset. |
 | UK FCDO text via GOV.UK Content API | GOV.UK offers its content under Open Government Licence v3.0 except where otherwise stated. | Retain source/provider attribution; do not imply UK endorsement or convert native flags into French categories. No UK map imagery is bundled. |
 | Natural Earth boundaries and populated places | Public domain. | Credit is retained even though the source says it is not required. |

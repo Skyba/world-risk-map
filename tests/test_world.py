@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import sys
 import tempfile
@@ -46,6 +47,17 @@ class WorldTests(unittest.TestCase):
         self.assertEqual(world.public_blockers(s),['X'])
         s['countries']['X']['overview']['scope']='public'
         self.assertEqual(world.public_blockers(s),[])
+
+    def test_release_decision_is_bound_to_the_unchanged_snapshot(self):
+        s={'snapshot_date':'2026-10-07','countries':{}}
+        publication=self.root/'data/publication.json'
+        publication.parent.mkdir()
+        with patch.object(world,'ROOT',self.root):
+            self.assertFalse(world.release_authorized(s))
+            publication.write_text(json.dumps({'distribution':'public','snapshot':s['snapshot_date'],'snapshot_sha256':hashlib.sha256(manage.encoded(s)).hexdigest()}))
+            self.assertTrue(world.release_authorized(s))
+            s['countries']['X']={}
+            self.assertFalse(world.release_authorized(s))
 
     def test_display_rounding_preserves_partition_and_small_zones(self):
         from shapely.geometry import Polygon, box, mapping, shape

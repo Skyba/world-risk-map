@@ -128,12 +128,23 @@ def public_blockers(s):
     return [iso for iso,c in s['countries'].items() if any(c.get(k) for k in ['overview','local_overview','detail','exceptions']) and (c['review_status']!='approved' or c['rights_status']!='cleared' or any(c[k]['scope']!='public' for k in ['overview','local_overview','detail','exceptions'] if c.get(k)))]
 
 
+def release_authorized(s):
+    path=ROOT/'data/publication.json'
+    if not path.exists():return False
+    release=manage.load(path)
+    return release.get('distribution')=='public' and release.get('snapshot')==s['snapshot_date'] and release.get('snapshot_sha256')==hashlib.sha256(manage.encoded(s)).hexdigest()
+
+
 def build(preview=True):
     latest=current()
-    if not preview and public_blockers(latest):raise ValueError('Public world build withheld: advisory geometry review and reuse rights remain unresolved.')
+    if not preview and public_blockers(latest) and not release_authorized(latest):raise ValueError('Public world build withheld: no recorded release decision for this snapshot.')
+    if not preview:validate(latest)
     target=ROOT/('preview' if preview else 'dist')
     target.mkdir(exist_ok=True);(target/'assets').mkdir(exist_ok=True);(target/'snapshots').mkdir(exist_ok=True)
     for source,name in [('world.html','index.html'),('world.js','world.js'),('world.css','world.css')]:shutil.copyfile(ROOT/'src'/source,target/name)
+    if not preview:
+        page=target/'index.html';page.write_text(page.read_text().replace('PRIVATE PREVIEW','BETA'))
+        script=target/'world.js';script.write_text(script.read_text().replace('Independent preview','Independent map'))
     emitted=set();display_cache={};display_metrics={}
     def display(ref):
         key=ref['sha256']
@@ -153,7 +164,7 @@ def build(preview=True):
     previous=None;history=[]
     for path in snapshots:
         s=manage.load(path)
-        if not preview and public_blockers(s):continue
+        if not preview and public_blockers(s) and not release_authorized(s):continue
         countries_out={}
         global_features=[];fallback_features=[]
         land=manage.decode(s['common']['land'])

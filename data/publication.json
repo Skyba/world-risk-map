@@ -1,0 +1,10 @@
+{
+  "snapshot": "2026-10-07",
+  "snapshot_sha256": "1b896babbdbe0895a61a4f00a1e614512b87d7ce5ed168061882395bacf285c8",
+  "authorized_on": "2026-10-09",
+  "authorized_by": "project owner",
+  "distribution": "public",
+  "basis": "Owner explicitly instructed redistribution of the traced and smoothed zones and public deployment.",
+  "geometry_review": "candidate; approximate overview",
+  "third_party_permission_documented": false
+}

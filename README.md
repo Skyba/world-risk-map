@@ -8,7 +8,7 @@ This is a candidate worldwide overview, not a completed high-resolution advisory
 
 ## Run the local preview
 
-The current local project includes private input data. A public source-only checkout intentionally excludes uncleared map geometry and must be supplied with a cleared data release or local research inputs before building a map.
+The current local project includes local input data. The public source-only checkout excludes the extracted geometry objects, so a fresh checkout must be supplied with those inputs before building the complete map. The public website serves the authorized display geometry.
 
 ```sh
 python3 -m venv .venv
@@ -67,12 +67,14 @@ The build lightly rounds corners on shared edges between world-overview risk col
 
 ## Publication status
 
-The source code is public on [GitHub](https://github.com/Skyba/world-risk-map). Website deployment is pending the choice of redistributable data. No recurring source-update job is scheduled. The MIT licence covers authored software and documentation, not third-party data. France Diplomatie's world image and Colombia image visibly carry CC BY-NC-ND badges, while the general website offers Licence Ouverte 2.0. Permission for traced, simplified and recoloured geometry remains unresolved. See [DATA-LICENSES.md](DATA-LICENSES.md). Candidate geometry stays under `private/`, which Git ignores. Do not upload the entire local folder or force-add private assets.
+The source code is public on [GitHub](https://github.com/Skyba/world-risk-map). On 9 October 2026 the project owner authorized distribution of the complete candidate map as a public beta. The decision in `data/publication.json` is bound to the exact snapshot hash; it does not claim separate ministry permission or completed geographic review. See [DATA-LICENSES.md](DATA-LICENSES.md) for source-specific terms. The MIT licence covers authored software and documentation, not third-party data. No recurring source-update job is scheduled.
 
-The public builder refuses uncleared or unreviewed geometry:
+Build the authorized snapshot for deployment:
 
 ```sh
 .venv/bin/python scripts/world.py build
 ```
 
-Before publication: clarify map reuse rights; review geographic alignment, omitted islands and disputed boundaries; record rights and review evidence; clear the relevant geometry objects for public storage; verify production accessibility and device layouts; and choose dependable script/font hosting. Public approval is intentionally a separate editorial step and is not granted by passing geometry tests. The generated `dist/` can then be hosted as a static site with the planned custom domain.
+The generated `dist/` is the complete static deployment. Raw maps, local caches and original geometry objects stay under ignored directories and are not uploaded wholesale. The Sites project is recorded in `.openai/hosting.json`; its source and the public GitHub repository use the same Git commits. Deployment packages contain `dist/` and the hosting manifest. The intended custom domain is `riskmap.basilev.com`.
+
+A new monthly snapshot requires a new recorded publication decision after reviewing the changes. Passing geometry tests alone does not authorize a different snapshot. Approximate boundaries, missing islands and disputed areas remain limitations of this beta; use the linked official advice when planning travel.
